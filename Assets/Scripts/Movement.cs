@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
     public float health = 10; 
     public int coins; 
     public int lives =3; 
-    public float garvity; 
+    public float gravity; 
     public float speed = 4;
     public float terminalVelocity;
     
@@ -22,28 +22,29 @@ public class Player : MonoBehaviour
     void Update()
     {
 
-    TakeDamage(10 * Time.deltaTime);
-    // get our left/right input
-    xDirection = Input.GetAxis("Horizontal");
-    // get our up/down input
-    yDirection = Input.GetAxis("Vertical");
-    // give our directions to the movement vector, increased by speed
-    movement = new Vector3(xDirection,0, yDirection);
-    movement *= speed;
+        TakeDamage(10 * Time.deltaTime);
+        // get our left/right input
+        xDirection = Input.GetAxis("Horizontal");
+        // get our up/down input
+        yDirection = Input.GetAxis("Vertical");
+        // give our directions to the movement vector, increased by speed
+        movement = new Vector3(xDirection,0, yDirection);
+        movement *= speed;
 
-    //if we are on the ground...
-    if(GetComponent<CharacterController>(). isGrounded)
+        //if we are on the ground...
+        if(GetComponent<CharacterController>(). isGrounded)
         {
 
             yVelocity = -1; 
             //if we press the jump button
             if(Input.GetButtonDown("Jump"))
             {
+                Debug.Log("Jumping!");
                 //change out yvelocity based on the jump power
                 yVelocity = jumpPower;
             }
         }
-       //else if we are not on the ground 
+        //else if we are not on the ground 
         else
         {
             // make sue yvelocity is faster than terminal velocity
@@ -52,7 +53,7 @@ public class Player : MonoBehaviour
         }
 
         //apply gravity to gradually pull us downwards 
-        yVelocity -= garvity * Time.deltaTime;
+        yVelocity -= gravity * Time.deltaTime;
 
         movement.y = yVelocity;
 
