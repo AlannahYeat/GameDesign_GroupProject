@@ -3,9 +3,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float jumpPower;
-    public float health = 10; 
-    public int coins; 
-    public int lives =3; 
+    // public float health = 10; 
+    // public int coins; 
+    // public int lives =3; 
     public float gravity; 
     public float speed = 4;
     public float terminalVelocity;
@@ -22,7 +22,9 @@ public class Player : MonoBehaviour
     void Update()
     {
 
-        TakeDamage(10 * Time.deltaTime);
+        // TakeDamage(10 * Time.deltaTime);
+
+
         // get our left/right input
         xDirection = Input.GetAxis("Horizontal");
         // get our up/down input
@@ -64,18 +66,20 @@ public class Player : MonoBehaviour
     GetComponent<CharacterController>().Move(movement);  
 
     }
-    // amount will be provided whe we run this function 
-    public void TakeDamage(float amount)
-    {
-        //Reduce health by incoming amount 
-        health -= amount; 
-        // if health is less than or equal to 0 
-        if (health <= 0)
-        {
-           // reduce lives by one 
-           lives -= 1; 
-            // set health back to 100
-            health = 10; 
-        }    
-    }
+
+
+    //// amount will be provided whe we run this function 
+    //public void TakeDamage(float amount)
+    //{
+    //    //Reduce health by incoming amount 
+    //    health -= amount; 
+    //    // if health is less than or equal to 0 
+    //    if (health <= 0)
+    //    {
+    //       // reduce lives by one 
+    //       lives -= 1; 
+    //        // set health back to 100
+    //        health = 10; 
+    //    }    
+    //}
 }

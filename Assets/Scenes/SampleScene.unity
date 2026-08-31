@@ -718,8 +718,8 @@ MonoBehaviour:
   sensitivity: 1
   verticalRotationMin: 0
   verticalRotationMax: 0
-  followTransform: {fileID: 0}
-  cameraZoomIdeal: 10
+  followTransform: {fileID: 500922431}
+  cameraZoomIdeal: 50
 --- !u!1 &354641070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,11 +1327,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   jumpPower: 10
-  health: 10
-  coins: 0
-  lives: 3
   gravity: 20
-  speed: 4
+  speed: 12
   terminalVelocity: 10
 --- !u!143 &500922427
 CharacterController:
