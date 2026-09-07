@@ -29,7 +29,7 @@ public class ThirdPersonCamera : MonoBehaviour
         // get the first child of THAT transform
         cameraTransform = boomTransform.GetChild(0);
 
-        currentHorizontalRotation = transform.localEulerAngles.y;
+       // currentHorizontalRotation = transform.localEulerAngles.y;
         currentVerticalRotation = boomTransform.localEulerAngles.x;
 
         cameraZoomActual = cameraZoomIdeal;
@@ -41,13 +41,13 @@ public class ThirdPersonCamera : MonoBehaviour
     
     void Update()
     {
-        currentHorizontalRotation += Input.GetAxis("Mouse X") * sensitivity;
+       // currentHorizontalRotation += Input.GetAxis("Mouse X") * sensitivity;
         currentVerticalRotation -= Input.GetAxis("Mouse Y") * sensitivity;
 
         currentVerticalRotation = Mathf.Clamp(currentVerticalRotation, verticalRotationMin, verticalRotationMax);
 
         // only our left/right rotation
-        transform.localEulerAngles = new Vector3(0, currentHorizontalRotation);
+       // transform.localEulerAngles = new Vector3(0, currentHorizontalRotation);
 
         // our boom only rotates up/down
         boomTransform.localEulerAngles = new Vector3(currentVerticalRotation, 0);
