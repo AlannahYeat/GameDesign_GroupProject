@@ -6,18 +6,19 @@ public class SphereColliderCollision : MonoBehaviour
 {
 
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("something happened");
         //if (!other)
         //{
         //    return;
         //}
 
-        if (collision.gameObject.tag == "Wood")
+        if (other.tag == "Wood")
         {
-            Debug.Log("Hit: " + collision.transform.name);
+            Debug.Log("Hit: " + other.transform.name);
 
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
 
             Destroy(this.gameObject);
         }
