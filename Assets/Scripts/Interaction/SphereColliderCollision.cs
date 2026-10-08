@@ -4,15 +4,25 @@ using UnityEngine.Events;
 
 public class SphereColliderCollision : MonoBehaviour
 {
+    public GameObject plank;
 
+    //private bool SetActive = false;
+
+    private void Start()
+    {
+        plank = GetComponent<GameObject>();
+
+        plank.SetActive(false);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
+
         Debug.Log("something happened");
-        //if (!other)
-        //{
-        //    return;
-        //}
+        if (!other)
+        {
+            return;
+        }
 
         if (other.tag == "Wood")
         {
@@ -20,7 +30,9 @@ public class SphereColliderCollision : MonoBehaviour
 
             Destroy(other.gameObject);
 
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
+
+            plank.SetActive(true);
         }
     }
 }
