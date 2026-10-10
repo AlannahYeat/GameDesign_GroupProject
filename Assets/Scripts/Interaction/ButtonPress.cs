@@ -23,7 +23,7 @@ public class ButtonPress : MonoBehaviour
             // something something countdown start
             Debug.Log("Hit: " + collision.transform.name);
 
-            goblin.transform(0, 0, -25);
+           // goblin.transform(0, 0, -25);
         }
     }
 }
